@@ -1,0 +1,8 @@
+RULE trace readLine exit
+CLASS java.io.BufferedReader
+METHOD readLine()
+HELPER br.com.zup.godfather.agent.BufferReaderHelper
+AT EXIT
+IF TRUE
+DO collect($0);
+ENDRULE

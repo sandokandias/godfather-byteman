@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: godfather-consumer
+    kafka:
+      bootstrap-servers: 127.0.0.1:9092
+      producer.client-id: godfather-consumer
+      listener.concurrency: 1
+      consumer:
+        auto-offset-reset: earliest
+  data:
+    mongodb:
+      database: godfather_consumer
+      username: sandokan
+      password: san123
+

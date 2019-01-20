@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  mongodb:
+    image: bitnami/mongodb:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./target:/godfather_consumer
+    environment:
+      - MONGODB_ROOT_PASSWORD=admin123
+      - MONGODB_USERNAME=sandokan
+      - MONGODB_PASSWORD=san123
+      - MONGODB_DATABASE=godfather_consumer
+
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_CREATE_TOPICS: "events:3:1"
+
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  metabase:
+    image: metabase/metabase:latest
+    ports:
+      - "3000:3000"

@@ -1,0 +1,10 @@
+HELPER br.com.zup.godfather.agent.ServletHelper
+
+RULE trace inbound in HttpServlet
+CLASS javax.servlet.http.HttpServlet
+METHOD service(HttpServletRequest, HttpServletResponse)
+AT ENTRY
+#BIND wrapper : javax.servlet.http.HttpServletRequestWrapper = new javax.servlet.http.HttpServletRequestWrapper($1);
+IF true
+DO trace($1.getInputStream())
+ENDRULE
