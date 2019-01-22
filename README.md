@@ -25,11 +25,11 @@ Execute the script
 $ ./get-byteman.sh
 ```
 
-Open the file "configure-byteman.sh" and set JAVA_HOME and BYTEMAN_HOME.
-
-Execute the script
+Set and export the JAVA_HOME and BYTEMAN_HOME.
 ```bash
-$ ./configure-byteman.sh
+$ export JAVA_HOME={YOUR JAVA HOME PATH}
+$ export BYTEMAN_HOME={YOUR BYTEMAN PATH}
+$ export PATH=${PATH}:${BYTEMAN_HOME}/bin
 ```
 
 
@@ -45,8 +45,22 @@ $ ./mvn-build.sh
 
 Starting the containers
 ```bash
-$ docker-compose up
+$ docker-compose up -d
 ```
+
+You can check the status of containers with
+```bash
+$ docker-compose ps
+```
+
+Good Output:
+            Name                          Command               State                         Ports                        
+--------------------------------------------------------------------------------------------------------------------------
+godfatherbyteman_kafka_1       start-kafka.sh                   Up      0.0.0.0:9092->9092/tcp                             
+godfatherbyteman_metabase_1    /app/run_metabase.sh             Up      0.0.0.0:3000->3000/tcp                             
+godfatherbyteman_mongodb_1     /app-entrypoint.sh /run.sh       Up      0.0.0.0:27017->27017/tcp                           
+godfatherbyteman_zookeeper_1   /bin/sh -c /usr/sbin/sshd  ...   Up      0.0.0.0:2181->2181/tcp, 22/tcp, 2888/tcp, 3888/tcp 
+
 
 ### Metabase setup
 Access http://localhost:3000 and set the user data. 
@@ -141,7 +155,7 @@ You only need to get the PID of the process and then execute the instrumentation
 
 Get the PID of the godfather-application
 ```bash
-$ ps aux | grep java
+$ ps aux | grep godfather-application
 ```
 
 Execute the script with PID value
@@ -150,3 +164,9 @@ $ ./install-agent.sh {PID}
 ```
 
 Send more requests like previous step. Go to the metabase and check the "collector_events" table
+
+
+### Logs
+```bash
+$ tail -f nohup.out
+```

@@ -9,8 +9,8 @@ services:
       - ./godfather_consumer
     environment:
       - MONGODB_ROOT_PASSWORD=admin123
-      - MONGODB_USERNAME=sandokan
-      - MONGODB_PASSWORD=san123
+      - MONGODB_USERNAME=agent
+      - MONGODB_PASSWORD=pw123
       - MONGODB_DATABASE=agent_collector_db
 
   zookeeper:

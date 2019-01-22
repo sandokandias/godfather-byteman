@@ -16,6 +16,7 @@ public class EventRepository {
     }
 
     public void save(ConsumerRecord<String, String> record) {
+        System.out.println("CONSUMER persisting event = " + record.key());
         String event = record.value();
         mongoTemplate.save(event, COLLECTION_NAME);
     }

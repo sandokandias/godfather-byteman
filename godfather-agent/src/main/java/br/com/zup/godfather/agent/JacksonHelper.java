@@ -10,7 +10,7 @@ public class JacksonHelper {
 
     public void traceAsObject(Object obj) {
         String json = JsonUtils.write(obj);
-        System.out.println("Collecting obj from Jackson.readValue " + json);
+        System.out.println("AGENT collecting event from class com.fasterxml.jackson.databind.ObjectMapper.readValue \n Payload = " + json);
         ProducerManager.send(json);
     }
 }
