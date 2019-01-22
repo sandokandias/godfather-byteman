@@ -1,9 +1,8 @@
-HELPER br.com.zup.godfather.agent.JacksonHelper
-
 RULE trace readValue in ObjectMapper
 CLASS com.fasterxml.jackson.databind.ObjectMapper
 METHOD readValue
+HELPER br.com.zup.godfather.agent.JacksonHelper
 AT EXIT
 IF true
-DO trace($!)
+DO traceAsObject($!)
 ENDRULE

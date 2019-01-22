@@ -8,9 +8,9 @@ public class JacksonHelper {
     public JacksonHelper() {
     }
 
-    public void trace(Object obj) {
-        String event = JsonUtils.writeAsString(obj);
-        System.out.println("Collecting event " + event);
-        ProducerManager.send(event);
+    public void traceAsObject(Object obj) {
+        String json = JsonUtils.write(obj);
+        System.out.println("Collecting obj from Jackson.readValue " + json);
+        ProducerManager.send(json);
     }
 }

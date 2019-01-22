@@ -6,7 +6,7 @@ spring:
       producer.client-id: godfather-consumer
       listener.concurrency: 1
       consumer:
-        auto-offset-reset: earliest
+        auto-offset-reset: latest
   data:
     mongodb:
       database: godfather_consumer

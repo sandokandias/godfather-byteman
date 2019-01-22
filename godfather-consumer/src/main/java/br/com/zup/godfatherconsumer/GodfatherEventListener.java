@@ -16,7 +16,6 @@ public class GodfatherEventListener {
     @KafkaListener(topics = "events", groupId = "godfather-consumer-events")
     public void listen(ConsumerRecord<String, String> record) throws Exception {
         System.out.println("consuming record = " + record);
-        String event = record.value();
-        eventRepository.save(event);
+        eventRepository.save(record);
     }
 }
