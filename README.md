@@ -164,8 +164,11 @@ $ ./install-agent.sh {PID}
 ```
 
 Send more requests like previous step. Go to the metabase and check the "collector_events" table.
-If the table do not appear on Metabase, you need to sync database on Admin page
+If the table do not appear on Metabase, you need to sync database on Admin page.
 
+The instrumentation rules in the example intercepts inputs json data.
+
+You can create your own instrumentation rules and support via Helpers.
 
 ### Logs
 ```bash
