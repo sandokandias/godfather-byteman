@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EventRepository {
 
-    public static final String COLLECTION_NAME = "godfather_events";
+    public static final String COLLECTION_NAME = "collector_events";
 
     private final MongoTemplate mongoTemplate;
 

@@ -11,7 +11,7 @@ services:
       - MONGODB_ROOT_PASSWORD=admin123
       - MONGODB_USERNAME=sandokan
       - MONGODB_PASSWORD=san123
-      - MONGODB_DATABASE=godfather_consumer
+      - MONGODB_DATABASE=agent_collector_db
 
   zookeeper:
     image: wurstmeister/zookeeper:latest

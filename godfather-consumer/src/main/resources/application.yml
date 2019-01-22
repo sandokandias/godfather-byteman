@@ -9,7 +9,7 @@ spring:
         auto-offset-reset: latest
   data:
     mongodb:
-      database: godfather_consumer
-      username: sandokan
-      password: san123
+      database: agent_collector_db
+      username: agent
+      password: pw123
 
