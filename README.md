@@ -21,31 +21,31 @@ JDK 8+, maven 3.x+, curl, unzip, docker and docker-compose
 ### Getting Byteman
 
 Execute the script
-```
-./get-byteman.sh
+```bash
+$ ./get-byteman.sh
 ```
 
 Open the file "configure-byteman.sh" and set JAVA_HOME and BYTEMAN_HOME.
 
 Execute the script
-```
-./configure-byteman.sh
+```bash
+$ ./configure-byteman.sh
 ```
 
 
 ### Building modules
 
 Execute the script
-```
-./mvn-build.sh
+```bash
+$ ./mvn-build.sh
 ```
 
 
 ## Running
 
 Starting the containers
-```
-docker-compose up
+```bash
+$ docker-compose up
 ```
 
 ### Metabase setup
@@ -60,13 +60,13 @@ For the database choose MongoDB and set the props bellow:
  
 
 ### Starting the applications
-```
-./run-apps.sh
+```bash
+$ ./run-apps.sh
 ```
 
 ### Send some requests to the application
-```
-curl -v -X POST http://localhost:8080/ \
+```bash
+$ curl -v -X POST http://localhost:8080/ \
 -H "Content-Type: application/json" \
 -d '{
   "intent": "sale",
@@ -140,13 +140,13 @@ The application don`t need to be stopped or restarted for the instrumentation.
 You only need to get the PID of the process and then execute the instrumentation script.
 
 Get the PID of the godfather-application
-```
-ps aux | grep java
+```bash
+$ ps aux | grep java
 ```
 
 Execute the script with PID value
-```
-./install-agent.sh {PID}
+```bash
+$ ./install-agent.sh {PID}
 ```
 
 Send more requests like previous step. Go to the metabase and check the "collector_events" table
