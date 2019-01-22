@@ -163,7 +163,8 @@ Execute the script with PID value
 $ ./install-agent.sh {PID}
 ```
 
-Send more requests like previous step. Go to the metabase and check the "collector_events" table
+Send more requests like previous step. Go to the metabase and check the "collector_events" table.
+If the table do not appear on Metabase, you need to sync database on Admin page
 
 
 ### Logs
