@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./target:/godfather_consumer
+      - ./godfather_consumer
     environment:
       - MONGODB_ROOT_PASSWORD=admin123
       - MONGODB_USERNAME=sandokan
