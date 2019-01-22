@@ -52,14 +52,14 @@ You can check the status of containers with
 ```bash
 $ docker-compose ps
 ```
-
 Good Output:
-            Name                          Command               State                         Ports                        
---------------------------------------------------------------------------------------------------------------------------
-godfatherbyteman_kafka_1       start-kafka.sh                   Up      0.0.0.0:9092->9092/tcp                             
-godfatherbyteman_metabase_1    /app/run_metabase.sh             Up      0.0.0.0:3000->3000/tcp                             
-godfatherbyteman_mongodb_1     /app-entrypoint.sh /run.sh       Up      0.0.0.0:27017->27017/tcp                           
-godfatherbyteman_zookeeper_1   /bin/sh -c /usr/sbin/sshd  ...   Up      0.0.0.0:2181->2181/tcp, 22/tcp, 2888/tcp, 3888/tcp 
+
+| Name                         | Command                       | State | Ports                                             |
+| -----------------------------| ------------------------------| ------| --------------------------------------------------|
+| godfatherbyteman_kafka_1     | start-kafka.sh                | Up    | 0.0.0.0:9092->9092/tcp                            |
+| godfatherbyteman_metabase_1  | /app/run_metabase.sh          | Up    | 0.0.0.0:3000->3000/tcp                            |
+| godfatherbyteman_mongodb_1   | /app-entrypoint.sh /run.sh    | Up    | 0.0.0.0:27017->27017/tcp                          |
+| godfatherbyteman_zookeeper_1 | /bin/sh -c /usr/sbin/sshd  ...| Up    | 0.0.0.0:2181->2181/tcp, 22/tcp, 2888/tcp,3888/tcp |
 
 
 ### Metabase setup
