@@ -2,6 +2,11 @@
 
 Customization agent for JVM applications
 
+## Modules
+ - godfather-agent: Manages the collecting and sending events by instrumentation rules
+ - godfaher-consumer: Application that consumes, prepare and persist the events collected by godfather-agent
+ - godfather-application: Demo application for testing purposes
+
 
 ## Getting Started
 
